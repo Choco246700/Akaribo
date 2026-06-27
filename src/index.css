@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Colors - Dark Theme (Obsidian & Cobalt) */
+  --bg-base: hsl(222, 28%, 5%);
+  --bg-surface: hsla(222, 28%, 10%, 0.65);
+  --bg-surface-solid: hsl(222, 28%, 8%);
+  --bg-surface-hover: hsla(222, 28%, 14%, 0.85);
+  
+
+  --accent-primary: hsl(217, 91%, 60%);
+  --accent-primary-rgb: 37, 99, 235;
+  --accent-secondary: hsl(263, 84%, 62%);
+  --accent-secondary-rgb: 124, 58, 237;
+  --accent-success: hsl(142, 69%, 45%);
+  --accent-success-rgb: 16, 185, 129;
+  --accent-warning: hsl(32, 95%, 48%);
+  --accent-warning-rgb: 217, 119, 6;
+  
+  --text-primary: hsl(210, 40%, 98%);
+  --text-secondary: hsl(215, 16%, 78%);
+  --text-muted: hsl(215, 12%, 58%);
+  
+  /* Borders and Glass */
+  --border-glass: hsla(217, 20%, 90%, 0.07);
+  --border-glass-hover: hsla(217, 20%, 90%, 0.15);
+  --border-active: hsla(217, 91%, 60%, 0.35);
+  
+  /* Shadows and Blurs */
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 30px hsla(217, 91%, 60%, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  
+  color-scheme: dark;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for sticky navbar */
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(217, 20%, 90%, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(217, 91%, 60%, 0.4);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-glass);
+  border-radius: var(--radius-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-glass-hover);
+}
+
+/* Glowing Elements */
+.glow-accent {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Custom Selection */
+::selection {
+  background: hsla(217, 91%, 60%, 0.3);
+  color: var(--text-primary);
+}
