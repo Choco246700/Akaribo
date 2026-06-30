@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, Truck, Handshake, Settings, Coins, Shield, UserCheck, TrendingUp, Key, FileText, MapPin, ChevronDown } from 'lucide-react';
-import toyotaHiace from '../../assets/images/toyota-hiace.png';
+import toyotaHiace from '../../assets/images/toyota-hiace.jpg';
 import serviceAcquisition from '../../assets/images/service-acquisition.jpg';
 import serviceOperations from '../../assets/images/service-operations.jpg';
 import serviceLogistics from '../../assets/images/service-logistics.jpg';
 import serviceMonitoring from '../../assets/images/service-monitoring.jpg';
+import managingDirectorImg from '../../assets/images/managing_director.png';
 import './Home.css';
 
 interface HomeProps {
@@ -115,6 +116,18 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage, setContactSubject })
                 for reliable transportation services and professionally managed investment opportunities. 
                 We provide transparent, accountable, and efficient transport asset management solutions 
                 that create value for both investors and the communities we serve.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-intro">
+            <div className="managing_director">
+              <img src={managingDirectorImg} alt="John Akaribo - Managing Director of Akaribo Transport & Logistics Ltd" />
+              <p>John Akaribo<br></br>Managing Director, Akaribo Transport and Logistics LTD </p>
+            </div>
+            <div className="about-intro-text">
+              <p>
+                An Automotive engineer at heart, with direct fleet management experience, John brings hands-on operational discipline and intercity transport sector exposure to every partnership he leads. He believes good transport business comes down to trust, transparency, and knowing the road.
               </p>
             </div>
           </div>
