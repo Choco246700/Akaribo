@@ -112,7 +112,7 @@ export const Footer: React.FC<FooterProps> = ({ currentPage, setCurrentPage }) =
         {/* Divider & Copyright */}
         <div className="footer-bottom">
           <p className="copyright-text">
-            © {currentYear} Akaribo Transport & Logistics Ltd. All rights reserved. | Spintex Road, Accra, Ghana | Registered in Ghana | RGD TNo: 202606185694107
+            © {currentYear} Akaribo Transport & Logistics Ltd. All rights reserved. | Sunkwa road, Osu, Accra, Ghana| Registered in Ghana | RGD TNo: 202606185694107
           </p>
           <div className="footer-policies">
             <button 
