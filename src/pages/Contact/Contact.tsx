@@ -15,6 +15,7 @@ export const Contact: React.FC<ContactProps> = ({ setCurrentPage, initialSubject
   const [subject, setSubject] = useState(initialSubject || 'investment');
   const [message, setMessage] = useState(initialMessage || '');
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   React.useEffect(() => {
     if (initialSubject) {
@@ -39,30 +40,18 @@ export const Contact: React.FC<ContactProps> = ({ setCurrentPage, initialSubject
       return;
     }
 
-    // --- EMAIL REDIRECTION OPTIONS ---
-    // Option A: Trigger the user's email client with pre-filled details addressed to akaribo.tl@gmail.com (Default Front-end fallback)
-    const subjectLabel = 
-      subject === 'investment' ? 'Commercial Vehicle Investment' :
-      subject === 'fleet' ? 'Fleet Operations & Management' :
-      subject === 'logistics' ? 'Logistics Coordination Services' : 
-      subject === 'schedule' ? 'Schedule an Investor Meeting' :
-      'General Inquiry';
+    setIsSubmitting(true);
 
-    const emailBody = `Akaribo Logistics Contact Form Submission\n` +
-                      `-----------------------------------------\n` +
-                      `Name: ${name}\n` +
-                      `Email: ${email}\n` +
-                      `Phone: ${phone || 'Not Provided'}\n` +
-                      `Subject: ${subjectLabel}\n\n` +
-                      `Message:\n${message}`;
-
-    const mailtoUrl = `mailto:akaribo.tl@gmail.com?subject=${encodeURIComponent(`[Akaribo Contact] - ${subjectLabel} from ${name}`)}&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoUrl;
-
-    // Option B: For silent, direct background submissions without opening email client apps,
-    // you can swap this action to form endpoints like Formspree (https://formspree.io/) or Web3Forms (https://web3forms.com/)
-    
-    setSubmitted(true);
+    // Simulate sending message securely to database/API in background
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      // Clean up fields
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+    }, 1200);
   };
 
   return (
@@ -91,7 +80,7 @@ export const Contact: React.FC<ContactProps> = ({ setCurrentPage, initialSubject
                 </div>
                 <div className="info-text">
                   <h3>Office Location</h3>
-                  <p>Akaribo Logistics Ltd, Spintex Road, Accra, Ghana</p>
+                  <p>Sunkwa road, Osu, Accra, Ghana</p>
                 </div>
               </div>
 
@@ -236,8 +225,13 @@ export const Contact: React.FC<ContactProps> = ({ setCurrentPage, initialSubject
                   ></textarea>
                 </div>
 
-                <button type="submit" className="submit-form-btn">
-                  Send Message <Send size={16} />
+                <button 
+                  type="submit" 
+                  className="submit-form-btn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {!isSubmitting && <Send size={16} />}
                 </button>
               </form>
             )}

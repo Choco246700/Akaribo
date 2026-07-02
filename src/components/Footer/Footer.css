@@ -28,9 +28,12 @@
 }
 
 .footer-logo-img {
-  height: 64px;
+  height: 100px;
   width: auto;
   align-self: flex-start;
+  background-color: hsl(222, 28%, 8%);
+  padding: 0.5em;
+  border-radius: 8px;
 }
 
 .footer-brand-text {

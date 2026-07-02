@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, Truck, Handshake, Settings, Coins, Shield, UserCheck, TrendingUp, Key, FileText, MapPin, ChevronDown } from 'lucide-react';
-import toyotaHiace from '../../assets/images/toyota-hiace.jpg';
-import serviceAcquisition from '../../assets/images/service-acquisition.jpg';
+import toyotaHiace from '../../assets/images/toyota-hiace.png';
+import serviceAcquisition from '../../assets/images/service-acquisition.png';
 import serviceOperations from '../../assets/images/service-operations.jpg';
 import serviceLogistics from '../../assets/images/service-logistics.jpg';
 import serviceMonitoring from '../../assets/images/service-monitoring.jpg';
@@ -122,6 +122,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage, setContactSubject })
 
           <div className="about-intro">
             <div className="managing_director">
+              <span className="founder-title">Our Founder</span>
               <img src={managingDirectorImg} alt="John Akaribo - Managing Director of Akaribo Transport & Logistics Ltd" />
               <p>John Akaribo<br></br>Managing Director, Akaribo Transport and Logistics LTD </p>
             </div>
@@ -203,7 +204,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage, setContactSubject })
                 <h3>Purchase a New Commercial Vehicle</h3>
               </div>
               <p>
-                Purchase a new commercial vehicle of your choice from our list of approved and recommended models.
+                If you don't have or own one, purchase a new commercial vehicle of your choice from our list of approved and recommended models.
               </p>
             </div>
 
