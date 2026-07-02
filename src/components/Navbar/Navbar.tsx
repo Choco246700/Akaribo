@@ -4,8 +4,8 @@ import logoImg from '../../assets/images/logo.png';
 import './Navbar.css';
 
 interface NavbarProps {
-  currentPage: 'home' | 'faq' | 'contact';
-  setCurrentPage: (page: 'home' | 'faq' | 'contact') => void;
+  currentPage: 'home' | 'faq' | 'contact' | 'terms' | 'privacy';
+  setCurrentPage: (page: 'home' | 'faq' | 'contact' | 'terms' | 'privacy') => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {

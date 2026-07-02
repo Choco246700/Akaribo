@@ -4,8 +4,8 @@ import logoImg from '../../assets/images/logo.png';
 import './Footer.css';
 
 interface FooterProps {
-  currentPage: 'home' | 'faq' | 'contact';
-  setCurrentPage: (page: 'home' | 'faq' | 'contact') => void;
+  currentPage: 'home' | 'faq' | 'contact' | 'terms' | 'privacy';
+  setCurrentPage: (page: 'home' | 'faq' | 'contact' | 'terms' | 'privacy') => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ currentPage, setCurrentPage }) => {
@@ -115,8 +115,18 @@ export const Footer: React.FC<FooterProps> = ({ currentPage, setCurrentPage }) =
             © {currentYear} Akaribo Transport & Logistics Ltd. All rights reserved. | Spintex Road, Accra, Ghana | Registered in Ghana | RGD TNo: 202606185694107
           </p>
           <div className="footer-policies">
-            <a href="#privacy" onClick={(e) => e.preventDefault()}>Privacy Policy</a>
-            <a href="#terms" onClick={(e) => e.preventDefault()}>Terms of Service</a>
+            <button 
+              onClick={() => { setCurrentPage('privacy'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              className="footer-policy-btn"
+            >
+              Privacy Policy
+            </button>
+            <button 
+              onClick={() => { setCurrentPage('terms'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              className="footer-policy-btn"
+            >
+              Terms of Service
+            </button>
           </div>
         </div>
       </div>
