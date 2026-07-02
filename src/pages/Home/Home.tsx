@@ -246,8 +246,8 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage, setContactSubject })
           </div>
 
           <div className="how-it-works-action">
-            <button className="how-it-works-btn" onClick={() => alert('Investor meeting scheduler coming soon!')}>
-              Schedule an Investor Meeting <ArrowRight className="arrow-icon" size={18} />
+            <button className="hero-btn hero-btn-primary" onClick={handleScheduleClick}>
+              Schedule an Investor Meeting
             </button>
           </div>
         </div>
@@ -297,8 +297,8 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage, setContactSubject })
           </div>
 
           <div className="benefits-action">
-            <button className="benefits-btn" onClick={handleScheduleClick}>
-              Schedule an investor meeting <ArrowRight className="arrow-icon" size={18} />
+            <button className="hero-btn hero-btn-primary" onClick={handleScheduleClick}>
+              Schedule an Investor Meeting
             </button>
           </div>
         </div>
