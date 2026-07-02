@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ currentPage, setCurrentPage }) =
             <h3 className="footer-col-title">Contact Office</h3>
             <ul className="footer-contact-list">
               <li>
-                <span className="contact-label">Location:</span> Spintex Road, Accra, Ghana
+                <span className="contact-label">Location:</span> Sunkwa road, Osu, Accra, Ghana
               </li>
               <li>
                 <span className="contact-label">Hotlines:</span>
