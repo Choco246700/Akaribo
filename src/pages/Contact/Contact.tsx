@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, ArrowLeft, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 interface ContactProps {
@@ -42,16 +43,53 @@ export const Contact: React.FC<ContactProps> = ({ setCurrentPage, initialSubject
 
     setIsSubmitting(true);
 
-    // Simulate sending message securely to database/API in background
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      // Clean up fields
-      setName('');
-      setEmail('');
-      setPhone('');
-      setMessage('');
-    }, 1200);
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Graceful fallback to client-side simulation if keys are not defined
+    if (!serviceId || !templateId || !publicKey) {
+      console.warn(
+        'EmailJS environment variables (VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY) are not set. ' +
+        'Falling back to frontend-only simulation.'
+      );
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSubmitted(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+      }, 1200);
+      return;
+    }
+
+    const templateParams = {
+      name: name,
+      from_name: name,
+      email: email,
+      from_email: email,
+      phone: phone || 'Not provided',
+      subject: subject,
+      message: message,
+      time: new Date().toLocaleString(),
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log('Email successfully sent!', response.status, response.text);
+        setIsSubmitting(false);
+        setSubmitted(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+      })
+      .catch((err) => {
+        console.error('Failed to send email:', err);
+        alert('Something went wrong while sending your message. Please try again or contact us directly at akaribo.tl@gmail.com.');
+        setIsSubmitting(false);
+      });
   };
 
   return (
