@@ -106,16 +106,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) =
             Home
           </button>
           <button
-            onClick={() => navigateToSection('about')}
-            className={`nav-link ${currentPage === 'home' && activeSection === 'about' ? 'active' : ''}`}
-          >
-            About Us
-          </button>
-          <button
             onClick={() => navigateToSection('investment')}
             className={`nav-link ${currentPage === 'home' && activeSection === 'investment' ? 'active' : ''}`}
           >
             Investment Programme
+          </button>
+          <button
+            onClick={() => navigateToSection('about')}
+            className={`nav-link ${currentPage === 'home' && activeSection === 'about' ? 'active' : ''}`}
+          >
+            About Us
           </button>
           <button
             onClick={navigateToContact}

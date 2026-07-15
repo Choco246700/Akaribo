@@ -102,65 +102,7 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage, setContactSubject })
         </div>
       </section>
 
-      <section className="about-section" id="about">
-        <div className="about-container">
-          <h2 className="section-title">About Us</h2>
-          
-          <div className="about-intro">
-            <div className="about-intro-title">
-              <h3>Why the Company was created</h3>
-            </div>
-            <div className="about-intro-text">
-              <p>
-                Akaribo Transport & Logistics Ltd was created to bridge the gap between growing demand 
-                for reliable transportation services and professionally managed investment opportunities. 
-                We provide transparent, accountable, and efficient transport asset management solutions 
-                that create value for both investors and the communities we serve.
-              </p>
-            </div>
-          </div>
-
-          <div className="about-intro">
-            <div className="managing_director">
-              <span className="founder-title">Our Founder</span>
-              <img src={managingDirectorImg} alt="John Akaribo - Managing Director of Akaribo Transport & Logistics Ltd" />
-              <p>John Akaribo<br></br>Managing Director, Akaribo Transport and Logistics LTD </p>
-            </div>
-            <div className="about-intro-text">
-              <p>
-                An Automotive engineer at heart, with direct fleet management experience, John brings hands-on operational discipline and intercity transport sector exposure to every partnership he leads. He believes good transport business comes down to trust, transparency, and knowing the road.
-              </p>
-            </div>
-          </div>
-
-          <div className="about-grid">
-            <div className="about-card">
-              <h3>Our Mission</h3>
-              <p>
-                To create sustainable transport investment opportunities while delivering safe, efficient, 
-                and professionally managed mobility solutions across Ghana.
-              </p>
-            </div>
-            <div className="about-card">
-              <h3>Our Vision</h3>
-              <p>
-                To become Ghana's most trusted transport asset management company.
-              </p>
-            </div>
-            <div className="about-card">
-              <h3>Core Values</h3>
-              <ul className="values-list">
-                <li>Transparency</li>
-                <li>Accountability</li>
-                <li>Safety</li>
-                <li>Innovation</li>
-                <li>Partnership</li>
-                <li>Excellence</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <section className="investment-section" id="investment">
         <div className="investment-container">
@@ -378,6 +320,65 @@ export const Home: React.FC<HomeProps> = ({ setCurrentPage, setContactSubject })
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+      <section className="about-section" id="about">
+        <div className="about-container">
+          <h2 className="section-title">About Us</h2>
+          
+          <div className="about-intro">
+            <div className="about-intro-title">
+              <h3>Why the Company was created</h3>
+            </div>
+            <div className="about-intro-text">
+              <p>
+                Akaribo Transport & Logistics Ltd was created to bridge the gap between growing demand 
+                for reliable transportation services and professionally managed investment opportunities. 
+                We provide transparent, accountable, and efficient transport asset management solutions 
+                that create value for both investors and the communities we serve.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-intro">
+            <div className="managing_director">
+              <span className="founder-title">Management</span>
+              <img src={managingDirectorImg} alt="John Akaribo - Managing Director of Akaribo Transport & Logistics Ltd" />
+              <p>John Akaribo<br></br><span className='founder-pos'>Founder and Managing Director</span></p>
+            </div>
+            <div className="about-intro-text">
+              <p>
+                An Automotive engineer at heart, with direct fleet management experience, John brings hands-on operational discipline and intercity transport sector exposure to every partnership he leads. He believes good transport business comes down to trust, transparency, and knowing the road.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-grid">
+            <div className="about-card">
+              <h3>Our Mission</h3>
+              <p>
+                To create sustainable transport investment opportunities while delivering safe, efficient, 
+                and professionally managed mobility solutions across Ghana.
+              </p>
+            </div>
+            <div className="about-card">
+              <h3>Our Vision</h3>
+              <p>
+                To become Ghana's most trusted transport asset management company.
+              </p>
+            </div>
+            <div className="about-card">
+              <h3>Core Values</h3>
+              <ul className="values-list">
+                <li>Transparency</li>
+                <li>Accountability</li>
+                <li>Safety</li>
+                <li>Innovation</li>
+                <li>Partnership</li>
+                <li>Excellence</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
